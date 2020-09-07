@@ -6,21 +6,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Consumidor Consumidor = new Consumidor();
-		Consumidor.fiados = new int[10];
+		
 		
   		Scanner scanner = new Scanner(System.in);
 		System.out.print("Informe o nome do cliente: ");
-		Consumidor.nome = scanner.nextLine();
-		System.out.print("Informe o valor da compra: ");
-		Consumidor.fiados[0] = Integer.valueOf(scanner.nextLine());
 		
-		int total = somaWhile(Consumidor.fiados);
+		String nome = scanner.nextLine();
+		Consumidor Consumidor = new Consumidor (nome);
+		System.out.print("Informe o valor da compra: ");
+		
+		int fiado = Integer.valueOf(scanner.nextLine());
+		Consumidor.registrarFiado(fiado);
+		
+		int total = Consumidor.getFiado();
 		
 		if (total > 100) {
-		System.out.println("Cliente " + Consumidor.nome + " deve:  " + total + " ganhou brinde! ");
+		System.out.println("Cliente " + Consumidor.getNome() + " deve:  " + total + " ganhou brinde! ");
 		} else {
-			System.out.println("Cliente " + Consumidor.nome + " deve:  " + total);
+			System.out.println("Cliente " + Consumidor.getNome() + " deve:  " + total);
 		}
 		
 		
