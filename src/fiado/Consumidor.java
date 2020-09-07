@@ -1,38 +1,58 @@
 package fiado;
 
+import java.util.ArrayList;
+
 public class Consumidor {
 	
-	//codigo-fonte
-	//atribudos
 	private String nome;
-	private int[] fiados;
-	private int posicao = 0;
-		
-	public Consumidor(String nome) {
+	private ArrayList<Integer> fiados;
+	private String telefone;
+	
+	
+	
+	public Consumidor(String nome, ArrayList<Integer> fiados, String telefone) {
+
 		this.nome = nome;
-		this.fiados = new int[10];
+		this.fiados = fiados;
+		this.telefone = telefone;
 	}
-	
-	// getter e setter
-	public String getNome( ) {
-		return this.nome;
+
+
+	public String getNome() {
+		return nome;
 	}
-	
+
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
-	public void registrarFiado(int valor) {
-		this.fiados[posicao] = valor;
-		posicao++;
+	public void registraFiado(int valor) {
+		this.fiados.add(valor);
 	}
-	
-	public int getFiado() {
+
+
+	public ArrayList<Integer> getFiados() {
 		int total = 0;
 		for (int fiado : fiados) {
 			total += fiado;
 		}
-		return total;
+		return fiados;
 	}
 
+
+	
+	public String getTelefone() {
+		return telefone;
+	}
+
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	public void adiciona(ArrayList<Integer> fiados, int valor) {
+		fiados.add(valor);
+	}
+		
 }
