@@ -6,24 +6,21 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		// conjunto finito e ordenado
-		int[] fiados = new int[10];
-//		fiados[0] = 12;
-//		fiados[3] = 87;
+		Consumidor Consumidor = new Consumidor();
+		Consumidor.fiados = new int[10];
 		
-		
-		Scanner scanner = new Scanner(System.in);
+  		Scanner scanner = new Scanner(System.in);
 		System.out.print("Informe o nome do cliente: ");
-		String nome = scanner.nextLine();
+		Consumidor.nome = scanner.nextLine();
 		System.out.print("Informe o valor da compra: ");
-		fiados[0] = Integer.valueOf(scanner.nextLine());
+		Consumidor.fiados[0] = Integer.valueOf(scanner.nextLine());
 		
-		int total = somaWhile(fiados);
+		int total = somaWhile(Consumidor.fiados);
 		
 		if (total > 100) {
-			System.out.println("Cliente " + nome + " deve:  " + total + " ganhou brinde! ");
+		System.out.println("Cliente " + Consumidor.nome + " deve:  " + total + " ganhou brinde! ");
 		} else {
-			System.out.println("Cliente " + nome + " deve:  " + total);
+			System.out.println("Cliente " + Consumidor.nome + " deve:  " + total);
 		}
 		
 		
